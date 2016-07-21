@@ -10,9 +10,9 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 /**
- * ÈÕÖ¾ÇĞÃæ
+ * æ—¥å¿—åˆ‡é¢
  * @author lerry
- * created on 2016Äê7ÔÂ21ÈÕ
+ * created on 2016å¹´7æœˆ21æ—¥
  */
 @Aspect
 @Component
@@ -28,7 +28,7 @@ public class LogAspect {
 		MethodSignature signature = (MethodSignature) joinPoint.getSignature();
 		Method method = signature.getMethod();
 		Action action = method.getAnnotation(Action.class);
-		System.out.println(String.format("×¢½âÊ½À¹½Ø %s", action.name()));
+		System.out.println(String.format("after %s", action.name()));
 	}
 
 	
@@ -37,6 +37,6 @@ public class LogAspect {
 	public void before(JoinPoint joinpoint) {
 		MethodSignature signature = (MethodSignature) joinpoint.getSignature();
 		Method method = signature.getMethod();
-		System.out.println(String.format("·½·¨¹æÔòÀ¹½Ø %s", method.getName()));
+		System.out.println(String.format("before %s", method.getName()));
 	}
 }

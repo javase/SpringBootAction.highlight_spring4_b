@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 /**
- * 统计方法执行耗时的切面
+ * 鏂规硶鎵ц鑰楁椂鍒囬潰
  * 
  * @author Envy6x
  *
