@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 /**
- * 统计方法执行耗时
+ * 统计方法执行耗时的切面
  * 
  * @author Envy6x
  *
@@ -27,9 +27,8 @@ public class TimeAspect {
 		Object output = joinPoint.proceed();
 		long elapsedTime = System.currentTimeMillis() - start;
 		String className = joinPoint.getTarget().getClass().getSimpleName();
-		//className = className == null ? "" : className.substring(0, className.indexOf("$"));
-		System.out.println(className);
-		System.out.println(String.format("method [%s.%s] execution time:%sms", className, joinPoint.getSignature().getName(), elapsedTime));
+		//className = className == null ? "" : className.substring(0, className.indexOf("$"));		
+		System.out.println(String.format("method [%s.%s()] execution time:%sms", className, joinPoint.getSignature().getName(), elapsedTime));
 		return output;
 	}
 }

@@ -9,7 +9,11 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
-
+/**
+ * 日志切面
+ * @author lerry
+ * created on 2016年7月21日
+ */
 @Aspect
 @Component
 public class LogAspect {
